@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Devaanga Prakash Oza — AI Workflow & Automation Engineer</title>
+<meta name="description" content="I build systems that turn messy input and AI output into structured, validated, auditable results.">
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --line:#30363d;
+    --fg:#e6edf3; --muted:#9198a1; --accent:#58a6ff; --accent2:#3fb950;
+    --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+  }
+  @media (prefers-color-scheme: light){
+    :root{ --bg:#ffffff; --panel:#f6f8fa; --line:#d1d9e0; --fg:#1f2328; --muted:#59636e; --accent:#0969da; --accent2:#1a7f37; }
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--fg);
+    font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:860px;margin:0 auto;padding:0 24px}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  header{padding:88px 0 56px;border-bottom:1px solid var(--line)}
+  h1{font-size:clamp(30px,5vw,44px);line-height:1.15;margin:0 0 14px;letter-spacing:-.02em}
+  .tag{font-family:var(--mono);font-size:14px;color:var(--accent2);margin:0 0 18px}
+  .lede{font-size:clamp(17px,2.3vw,20px);color:var(--muted);margin:0 0 26px;max-width:62ch}
+  .links{display:flex;flex-wrap:wrap;gap:10px}
+  .btn{
+    display:inline-block;padding:8px 15px;border:1px solid var(--line);border-radius:8px;
+    background:var(--panel);color:var(--fg);font-size:14px;font-weight:500
+  }
+  .btn:hover{border-color:var(--accent);text-decoration:none}
+
+  section{padding:52px 0;border-bottom:1px solid var(--line)}
+  h2{font-size:13px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);margin:0 0 26px;font-weight:600}
+  h3{font-size:19px;margin:0 0 6px}
+
+  .card{border:1px solid var(--line);border-radius:12px;padding:22px;background:var(--panel);margin-bottom:18px}
+  .card p{margin:10px 0 0;color:var(--muted);font-size:15px}
+  .row{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .badge{
+    font-family:var(--mono);font-size:11px;padding:3px 9px;border-radius:99px;
+    border:1px solid var(--line);color:var(--muted);white-space:nowrap
+  }
+  .badge.live{color:var(--accent2);border-color:var(--accent2)}
+  ul.feat{margin:14px 0 0;padding-left:18px;color:var(--muted);font-size:15px}
+  ul.feat li{margin:5px 0}
+  .stack{font-family:var(--mono);font-size:12.5px;color:var(--muted);margin-top:14px}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px}
+  .grid h4{margin:0 0 8px;font-size:14px}
+  .grid p{margin:0;color:var(--muted);font-size:14px}
+
+  footer{padding:44px 0 72px;color:var(--muted);font-size:14px}
+  code{font-family:var(--mono);font-size:.9em;background:var(--panel);padding:2px 6px;border-radius:5px;border:1px solid var(--line)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <p class="tag">AI workflow &amp; automation</p>
+    <h1>Devaanga Prakash Oza</h1>
+    <p class="lede">
+      I build systems that turn messy input and AI output into <strong>structured, validated, auditable</strong>
+      results — schema-enforced specs, sandboxed execution, and metrics you can actually trust.
+    </p>
+    <div class="links">
+      <a class="btn" href="https://github.com/LegenDairy93">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/devaanga-prakash-0a8482196">LinkedIn</a>
+      <a class="btn" href="mailto:devaanga1234@gmail.com">Email</a>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>What I build</h2>
+    <div class="grid">
+      <div>
+        <h4>Validated AI output</h4>
+        <p>Constrained generation with schema enforcement, so models can't emit invalid or hallucinated operations.</p>
+      </div>
+      <div>
+        <h4>Sandboxed execution</h4>
+        <p>Whitelisted primitives, no arbitrary code, timeouts and isolation — AI-generated logic that's safe to run.</p>
+      </div>
+      <div>
+        <h4>Evals &amp; observability</h4>
+        <p>Test cases, assertions, run artifacts, diffing and lineage, so behaviour changes are visible before they ship.</p>
+      </div>
+      <div>
+        <h4>Automation &amp; pipelines</h4>
+        <p>Data cleaning, validation, structured logging, metrics and reporting wired into repeatable workflows.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Projects</h2>
+
+    <div class="card">
+      <div class="row">
+        <h3>promptdiff</h3>
+        <span class="badge live">open source · TypeScript</span>
+      </div>
+      <p>
+        A local-first CLI for prompt regression testing. Prompts are code — this diffs them like code.
+        Runs test cases, validates output, stores git-friendly run artifacts, and fails CI when behaviour regresses.
+      </p>
+      <ul class="feat">
+        <li>Assertions: <code>contains</code>, <code>regex</code>, <code>json_schema</code>, <code>max_length</code></li>
+        <li>Plain-JSON run artifacts with prompt hash, provider, and full assertion results</li>
+        <li><code>diff</code> two runs — pass-rate delta, newly passing/failing cases</li>
+        <li>CI regression gate: non-zero exit when regressions exceed threshold</li>
+        <li>Deterministic offline mock provider; API keys never written to artifacts</li>
+      </ul>
+      <p class="stack">TypeScript · Node · Commander · Ajv · Zod · Vitest · GitHub Actions</p>
+      <p style="margin-top:16px"><a href="https://github.com/LegenDairy93/promptdiff">View repository →</a></p>
+    </div>
+
+    <div class="card">
+      <div class="row">
+        <h3>Zaraki — natural-language research engine</h3>
+        <span class="badge">private · closed beta</span>
+      </div>
+      <p>
+        Built end-to-end as part of a founding team: a research engine that compiles plain-language intent into
+        validated, executable strategy specifications, runs them safely, and tracks every result.
+      </p>
+      <ul class="feat">
+        <li>Natural-language → DSL compiler with <strong>schema enforcement</strong>, rejecting invalid or hallucinated operations</li>
+        <li>Sandboxed evaluator — whitelisted primitives, no arbitrary code execution, timeouts, memory isolation</li>
+        <li>Simulation pipeline producing performance metrics, with <strong>run-level lineage</strong> for reproducibility</li>
+        <li>One-click variant transforms with pre-run validation and automatic parent-vs-child comparison</li>
+        <li>Product design: the iteration loop, target persona, and product-market-fit analysis</li>
+      </ul>
+      <p class="stack">Python · constrained LLM generation · sandboxed evaluation · metrics &amp; lineage</p>
+      <p style="margin-top:14px;font-size:14px">
+        Closed beta and not publicly available — no code or data is shared here. Happy to walk through the
+        architecture and the decisions behind it.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Toolkit</h2>
+    <div class="grid">
+      <div><h4>Languages</h4><p>Python, TypeScript / Node, SQL</p></div>
+      <div><h4>Data</h4><p>Pandas, NumPy, validation, structured logging, time-series &amp; event pipelines</p></div>
+      <div><h4>AI</h4><p>Schema-constrained generation, prompt evaluation, RAG, guardrails, agent workflows</p></div>
+      <div><h4>Platform</h4><p>Git, GitHub Actions, Docker, Linux, MongoDB</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>
+      Bachelor of Business Administration · based in India · open to remote work.<br>
+      <a href="mailto:devaanga1234@gmail.com">devaanga1234@gmail.com</a> ·
+      <a href="https://github.com/LegenDairy93">github.com/LegenDairy93</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
