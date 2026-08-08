@@ -1,0 +1,76 @@
+const field=document.querySelector('#type-field')
+const stage=document.querySelector('#type-lines')
+const orb=document.querySelector('#type-orb')
+const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+if(field&&stage&&orb&&!reduced){
+  try{
+    const {prepareWithSegments,layoutNextLine}=await import('https://esm.sh/@chenglou/pretext@0.0.8?bundle')
+    const copy='SOFTWARE  EXPERIMENTS  PROMPTS  TRACES  AGENTS  DATA  OPEN SOURCE  TOOLS  TESTS  SQL  STRANGE IDEAS  USEFUL THINGS  PROMPTDIFF  HAVOC  CONTRIB SIGNALS  GITGAME  BUILD  BREAK  LEARN  REPEAT  '
+    const font='650 18px "IBM Plex Mono", Consolas, monospace'
+    const prepared=prepareWithSegments(copy.repeat(5),font)
+    const lines=[]
+    let target={x:.64,y:.5}
+    let point={...target}
+    let raf=0
+
+    field.classList.add('is-live')
+    field.addEventListener('pointermove',event=>{
+      const rect=stage.getBoundingClientRect()
+      target.x=Math.max(0,Math.min(1,(event.clientX-rect.left)/rect.width))
+      target.y=Math.max(0,Math.min(1,(event.clientY-rect.top)/rect.height))
+      if(!raf)raf=requestAnimationFrame(frame)
+    })
+    field.addEventListener('pointerleave',()=>{
+      target={x:.64,y:.5}
+      if(!raf)raf=requestAnimationFrame(frame)
+    })
+
+    function sync(length){
+      while(lines.length<length){const element=document.createElement('span');element.className='type-line';stage.append(element);lines.push(element)}
+      while(lines.length>length)lines.pop().remove()
+    }
+
+    function draw(){
+      const width=stage.clientWidth
+      const height=stage.clientHeight
+      const lineHeight=28
+      const radius=Math.min(70,width*.17)
+      const centerX=point.x*width
+      const centerY=point.y*height
+      orb.style.left=`${stage.offsetLeft+centerX}px`
+      orb.style.top=`${stage.offsetTop+centerY}px`
+      let cursor={segmentIndex:0,graphemeIndex:0}
+      const placed=[]
+      for(let y=0;y+lineHeight<=height;y+=lineHeight){
+        const deltaY=(y+lineHeight/2)-centerY
+        let slots=[[0,width]]
+        if(Math.abs(deltaY)<radius){
+          const deltaX=Math.sqrt(radius*radius-deltaY*deltaY)+16
+          slots=[[0,Math.max(0,centerX-deltaX)],[Math.min(width,centerX+deltaX),width]].filter(slot=>slot[1]-slot[0]>48)
+        }
+        if(!slots.length)continue
+        const slot=slots.reduce((best,candidate)=>candidate[1]-candidate[0]>best[1]-best[0]?candidate:best)
+        const line=layoutNextLine(prepared,cursor,slot[1]-slot[0])
+        if(!line)break
+        placed.push({x:slot[0],y,text:line.text})
+        cursor=line.end
+      }
+      sync(placed.length)
+      placed.forEach((item,index)=>{const element=lines[index];element.textContent=item.text;element.style.transform=`translate(${item.x}px,${item.y}px)`})
+    }
+
+    function frame(){
+      raf=0
+      point.x+=(target.x-point.x)*.13
+      point.y+=(target.y-point.y)*.13
+      draw()
+      if(Math.abs(target.x-point.x)+Math.abs(target.y-point.y)>.002)raf=requestAnimationFrame(frame)
+    }
+
+    new ResizeObserver(draw).observe(stage)
+    draw()
+  }catch(error){
+    console.info('Pretext field unavailable; keeping static fallback.',error)
+  }
+}
