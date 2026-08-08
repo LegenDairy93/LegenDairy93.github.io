@@ -102,6 +102,10 @@ footer{border-color:#414a3b;background:#090b08}
 .project-proof{display:flex;flex-wrap:wrap;gap:7px;margin-top:24px}
 .project-proof span{border-color:color-mix(in srgb,var(--accent) 42%,var(--line-strong));color:#d0d5c8;background:rgba(10,13,9,.24)}
 .project-go{padding-top:26px}
+.project-actions{display:flex;flex-wrap:wrap;align-items:center;gap:18px;margin-top:auto;padding-top:26px}
+.project-actions .project-go{margin:0;padding:0;text-decoration:none}
+.project-source{color:#c7cdbf;font:650 10px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;text-underline-offset:5px}
+.project-source:hover{color:var(--accent)}
 .project-half .project-proof{max-width:78%}
 @media(max-width:560px){
   .hero-proof{margin-top:20px}
