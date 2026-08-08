@@ -93,3 +93,18 @@ footer{border-color:#414a3b;background:#090b08}
 .project{transition:transform .18s ease,border-color .22s ease,box-shadow .22s ease,background-color .22s ease,opacity .55s ease}
 .has-reveal .project[data-reveal]{opacity:0;transform:perspective(1100px) rotateX(var(--rx)) rotateY(var(--ry)) translateY(var(--lift))}
 .has-reveal .project[data-reveal].is-visible{opacity:1;transform:perspective(1100px) rotateX(var(--rx)) rotateY(var(--ry)) translateY(var(--lift))}
+
+
+/* Recruiter-scan proof points */
+.hero-proof{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.hero-proof span,.project-proof span{padding:7px 9px;border:1px solid var(--line-strong);color:#c7cdbf;font:650 9px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.hero-proof span:first-child{border-color:var(--acid);color:var(--acid)}
+.project-proof{display:flex;flex-wrap:wrap;gap:7px;margin-top:24px}
+.project-proof span{border-color:color-mix(in srgb,var(--accent) 42%,var(--line-strong));color:#d0d5c8;background:rgba(10,13,9,.24)}
+.project-go{padding-top:26px}
+.project-half .project-proof{max-width:78%}
+@media(max-width:560px){
+  .hero-proof{margin-top:20px}
+  .project-half .project-proof{max-width:100%}
+  .project-proof span{font-size:8px}
+}
