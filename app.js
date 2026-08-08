@@ -74,3 +74,43 @@ if(field&&stage&&orb&&!reduced){
     console.info('Pretext field unavailable; keeping static fallback.',error)
   }
 }
+
+
+const revealTargets=[...document.querySelectorAll('.section-head,.project,.note,.archive-list,.about-grid')]
+if(revealTargets.length&&!reduced&&'IntersectionObserver' in window){
+  document.documentElement.classList.add('has-reveal')
+  revealTargets.forEach(target=>target.dataset.reveal='')
+  const observer=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(!entry.isIntersecting)return
+      entry.target.classList.add('is-visible')
+      observer.unobserve(entry.target)
+    })
+  },{rootMargin:'0px 0px -8% 0px',threshold:.12})
+  revealTargets.forEach(target=>observer.observe(target))
+}
+
+const tiltEnabled=window.matchMedia('(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)').matches
+if(tiltEnabled){
+  document.querySelectorAll('.project').forEach(card=>{
+    let frameId=0
+    let nextX=0
+    let nextY=0
+    const renderTilt=()=>{
+      frameId=0
+      card.style.setProperty('--rx',nextY+'deg')
+      card.style.setProperty('--ry',nextX+'deg')
+    }
+    card.addEventListener('pointermove',event=>{
+      const bounds=card.getBoundingClientRect()
+      nextX=((event.clientX-bounds.left)/bounds.width-.5)*1.8
+      nextY=-((event.clientY-bounds.top)/bounds.height-.5)*1.4
+      if(!frameId)frameId=requestAnimationFrame(renderTilt)
+    })
+    card.addEventListener('pointerleave',()=>{
+      nextX=0
+      nextY=0
+      if(!frameId)frameId=requestAnimationFrame(renderTilt)
+    })
+  })
+}
