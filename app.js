@@ -6,7 +6,7 @@ const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches
 if(field&&stage&&orb&&!reduced){
   try{
     const {prepareWithSegments,layoutNextLine}=await import('https://esm.sh/@chenglou/pretext@0.0.8?bundle')
-    const copy='SOFTWARE  EXPERIMENTS  PROMPTS  TRACES  AGENTS  DATA  OPEN SOURCE  TOOLS  TESTS  SQL  STRANGE IDEAS  USEFUL THINGS  PROMPTDIFF  HAVOC  CONTRIB SIGNALS  GITGAME  BUILD  BREAK  LEARN  REPEAT  '
+    const copy='SOFTWARE  EXPERIMENTS  PROMPTS  TRACES  AGENTS  DATA  OPEN SOURCE  TOOLS  TESTS  SQL  STRANGE IDEAS  USEFUL THINGS  PROMPTDIFF  CONTRIB SIGNALS  GITGAME  BUILD  BREAK  LEARN  REPEAT  '
     const font='650 18px "IBM Plex Mono", Consolas, monospace'
     const prepared=prepareWithSegments(copy.repeat(5),font)
     const lines=[]
