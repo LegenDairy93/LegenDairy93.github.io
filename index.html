@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#10120f">
-  <meta name="description" content="Devaanga Prakash builds open software and studies how intelligent systems behave outside clean demos.">
+  <meta name="description" content="Devaanga Prakash builds usable open-source and applied-AI tools, with public demos, source, evaluations, and write-ups.">
   <meta property="og:title" content="Devaanga Prakash — builds, field notes, open source">
   <meta property="og:description" content="Public software, applied AI experiments, and the engineering notes behind them.">
   <meta property="og:image" content="https://legendairy93.github.io/og-v2.png">
@@ -22,8 +22,8 @@
     <section class="hero shell">
       <div class="hero-main">
         <p class="eyebrow">Guwahati, India · building in public</p>
-        <h1>Software should<br><em>do something.</em></h1>
-        <p class="lede">I build usable software, investigate AI systems, and publish the reasoning—not just the reveal.</p>
+        <h1>I build tools<br><em>you can use.</em></h1>
+        <p class="lede">Forkyssey finds live open-source work worth investigating. Discharge Navigator turns clinical notes into structured, evidence-linked discharge packets.</p>
         <div class="hero-actions"><a class="button button-solid" href="#index">Open work index ↓</a><a class="button" href="mailto:devaanga1234@gmail.com">Talk to me ↗</a></div>
       </div>
       <aside class="now-card" aria-label="Current work">
@@ -37,13 +37,13 @@
 
     <section class="work-index shell" id="index">
       <header class="index-head">
-        <div><p class="eyebrow">Selected index</p><h2>Work, without<br>the résumé fog.</h2></div>
-        <p>Switch surfaces. Projects prove execution. Case studies expose judgment. Open source shows the work happening in public.</p>
+        <div><p class="eyebrow">Selected work</p><h2>Use the builds.<br>Read the work.</h2></div>
+        <p>Forkyssey is live. Discharge Navigator has a public demo and a complete technical write-up. The source, evaluation, and limits are linked.</p>
       </header>
 
       <div class="switcher" role="tablist" aria-label="Portfolio sections">
         <button id="tab-builds" role="tab" aria-selected="true" aria-controls="panel-builds" data-tab="builds"><span>01</span> Builds</button>
-        <button id="tab-studies" role="tab" aria-selected="false" aria-controls="panel-studies" data-tab="studies"><span>02</span> Case studies</button>
+        <button id="tab-studies" role="tab" aria-selected="false" aria-controls="panel-studies" data-tab="studies"><span>02</span> Studies &amp; write-ups</button>
         <button id="tab-oss" role="tab" aria-selected="false" aria-controls="panel-oss" data-tab="oss"><span>03</span> Open source</button>
       </div>
 
@@ -52,7 +52,7 @@
           <article class="feature-card">
             <div class="feature-copy">
               <div class="card-top"><span class="status live">LIVE BUILD</span><span>2026 / 01</span></div>
-              <h3>Forky<br>ssey</h3>
+              <h3>Forkyssey</h3>
               <p>A browser-based scout that turns a contributor profile into a bounded list of current GitHub issues, with explicit evidence gaps instead of a magic score.</p>
               <ul><li>Live GitHub discovery</li><li>Evidence-state cards</li><li>Local quest log</li><li>Static-first deployment</li></ul>
               <div class="card-actions"><a class="button button-solid" href="https://legendairy93.github.io/forkyssey/">Use the product ↗</a><a class="text-link" href="https://github.com/LegenDairy93/forkyssey">Source ↗</a></div>
@@ -66,18 +66,27 @@
             </div>
           </article>
           <div class="compact-grid">
-            <a class="compact-card" href="https://huggingface.co/spaces/LegenDairy93/discharge-navigator"><span>EARLIER BUILD</span><h4>Discharge Navigator</h4><p>Structure and recognition from noisy medical instructions.</p><b>Open demo ↗</b></a>
+            <a class="compact-card" href="https://huggingface.co/spaces/LegenDairy93/discharge-navigator"><span>APPLIED AI · MEDICAL TEXT</span><h4>Discharge Navigator</h4><p>Offline MedGemma extraction with schema validation and source-note evidence for every claim.</p><b>Open demo ↗</b></a>
             <a class="compact-card quiet" href="https://github.com/LegenDairy93?tab=repositories"><span>THE FULL TRAIL</span><h4>Experiments &amp; archives</h4><p>Not every repository is a flagship. The unfinished work stays visible.</p><b>Browse GitHub ↗</b></a>
           </div>
         </section>
 
         <section class="panel" id="panel-studies" role="tabpanel" aria-labelledby="tab-studies" data-panel="studies" hidden>
-          <div class="study-intro"><span>FIELD NOTES / LAUNCHING WITH THE FIRST COMPLETE STUDY</span><p>Not generic tutorials. Each case study starts with a claim, shows the test, and includes what failed.</p></div>
-          <div class="study-list">
-            <a class="study-row" href="https://huggingface.co/spaces/LegenDairy93/discharge-navigator"><span class="study-no">01</span><div><small>RECOGNITION · MEDICAL TEXT</small><h3>Finding structure inside noisy discharge instructions</h3><p>Extraction, uncertainty, provenance, and the difference between valid JSON and a reliable answer.</p></div><span class="study-state">IN PREPARATION ↗</span></a>
-            <div class="study-row muted-row"><span class="study-no">02</span><div><small>LOW-RESOURCE NLP · KAGGLE</small><h3>Akkadian → English under scarce data</h3><p>Reconstructing the translation experiment as a reproducible technical record.</p></div><span class="study-state">RECONSTRUCTING</span></div>
-          </div>
-          <div class="study-contract"><b>Every published study will include</b><span>Question</span><span>Baseline</span><span>Evaluation</span><span>Failures</span><span>Reproduction</span></div>
+          <div class="study-intro"><span>PUBLISHED STUDY / MEDGEMMA IMPACT CHALLENGE</span><p>The implementation, evaluation, failure cases, safety boundary, and deployment constraints are documented—not promised for later.</p></div>
+          <article class="study-feature">
+            <div class="study-copy">
+              <small>01 · OFFLINE CLINICAL-NOTE STRUCTURING</small>
+              <h3>Discharge Navigator</h3>
+              <p>MedGemma 4B extracts diagnoses, medications, follow-ups, warning signs, missing information, and patient-friendly summaries. Every claim must point back to an exact span in the source note before it reaches clinician review.</p>
+              <div class="study-actions"><a class="button button-solid" href="https://www.kaggle.com/competitions/med-gemma-impact-challenge/writeups/discharge-navigator">Read the full write-up ↗</a><a class="text-link" href="https://huggingface.co/spaces/LegenDairy93/discharge-navigator">Open demo ↗</a></div>
+            </div>
+            <div class="study-metrics" aria-label="Discharge Navigator evaluation results">
+              <div><strong>92%</strong><span>notes parsed<br>46 / 50</span></div>
+              <div><strong>87.5%</strong><span>overall evidence grounding</span></div>
+              <div><strong>34.4s</strong><span>median CPU extraction</span></div>
+              <div><strong>4</strong><span>failures caught<br>zero leaked</span></div>
+            </div>
+          </article>
         </section>
 
         <section class="panel" id="panel-oss" role="tabpanel" aria-labelledby="tab-oss" data-panel="oss" hidden>
@@ -90,7 +99,7 @@
       </div>
     </section>
 
-    <section class="about" id="about"><div class="shell about-grid"><p class="eyebrow">About / contact</p><h2>I’m trying to make work that earns another look.</h2><div><p>My background crosses business, data, and software. I care about products with a visible face and technical work that can survive inspection.</p><p><a href="mailto:devaanga1234@gmail.com">Email me ↗</a> <a href="https://www.linkedin.com/in/devaanga-prakash-0a8482196">LinkedIn ↗</a></p></div></div></section>
+    <section class="about" id="about"><div class="shell about-grid"><p class="eyebrow">About / contact</p><h2>Available for software, data, and applied-AI roles.</h2><div><p>I work with Python, TypeScript, SQL, evaluation pipelines, and local models. The projects above show the product, implementation, measurements, and failure boundaries.</p><p><a href="mailto:devaanga1234@gmail.com">Email me ↗</a> <a href="https://www.linkedin.com/in/devaanga-prakash-0a8482196">LinkedIn ↗</a></p></div></div></section>
   </main>
 
   <footer class="shell"><span>Devaanga Prakash · 2026</span><span>Built in public. Still moving.</span></footer>
